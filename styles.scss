@@ -1,7 +1,34 @@
-/* Variable declarations */
+// Variable declarations */
 
 //colors
 $body-background-color: darkred;
 $form-background-color: white;
 $input-color: white;
 $headlines-color : white;
+
+//set breakpoint sizes
+$break-small: 20em;
+$break-medium: 31em;
+$break-large: 60em;
+
+body {
+    background-color: $body-background-color;
+}
+
+
+
+#contactform {
+    background-color: $form-background-color;
+    input, textarea {
+        background-color: $input-color;
+        flex: 2;
+    }
+    @media (min-width: $break-small) {
+        & {
+            width: 90%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto; 
+        } 
+    }
+}

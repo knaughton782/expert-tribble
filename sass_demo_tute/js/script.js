@@ -4,8 +4,8 @@ $(document).ready(function(){
 	var viewportWidth = $(window).width();	
 	if (viewportWidth > 600) { 
 		$('li#wotype').hover(
-		 function(){ $('#type').show(100)},
-     function(){ $('#type').hide(100)}
+		function(){ $('#type').show(100)},
+    function(){ $('#type').hide(100)}
 		);
 	}
 		
@@ -23,4 +23,4 @@ $(document).ready(function(){
 		return false; /* Don't jump to real anchor. We still want tabs to show */
 	});  
 		
- });
+});

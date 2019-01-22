@@ -83,7 +83,7 @@ footer {
 } 
 
 footer ul { 
- 	float: none; 
+	float: none; 
 } 
 .copyright { 
 	margin: 3em 1em 1em 1em; 
@@ -95,11 +95,11 @@ footer ul {
 #listing { 
 	width: 95%; 
 	margin: 0 auto; 
-  border-top: 1px solid #4E4F48; 
+    border-top: 1px solid #4E4F48; 
 } 
 #listing ul li{
 	width: 100%;  
-  border-bottom: 1px solid #4E4F48; 
+    border-bottom: 1px solid #4E4F48; 
 	float: left; 
 	margin: 0; 
 	padding: 0; 

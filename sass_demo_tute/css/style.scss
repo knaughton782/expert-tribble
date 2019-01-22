@@ -1,9 +1,3 @@
-/*
-Colors:
-Background: #4E4F48
-Highlight:  #C2CF52
-*/
-
 /* CSS Reset */
 html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code, em, img, small, strong, sub, sup, var,
@@ -30,9 +24,14 @@ hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 
 input, select { vertical-align:middle; }
 /* END RESET CSS */
 
+/////////////////  variables ////////////////////
+
+$baseColor: rgb(128, 128, 128);
+$accentColor:  #C2CF52;
+$basefont: "Trebuchet MS", san-serif;
 
 /* BASE STYLES */
-body, select, input, textarea { color:#4E4F48; }
+body, select, input, textarea { color:$baseColor; }
 h1,h2,h3,h4,h5,h6 { font-weight: bold; text-rendering: optimizeLegibility; }
 html { -webkit-font-smoothing: antialiased; }
 
@@ -56,11 +55,13 @@ button {  width: auto; overflow: visible; }
 
 
 /* videofitness styles */
+
 body {
-  background-color: #4E4F48;
-  font-family: "Trebuchet MS", san-serif;
+  background-color: rgb(91, 92, 90);
+  font-family: $basefont;
   font-size: 80%;
 }
+
 #container {
   width: 820px;
   margin: 0 auto;
@@ -71,17 +72,88 @@ body {
   box-shadow: -3px 0px 5px #000;
   behavior: url(PIE.htc);
 }
+
 header {
-  height: 125px;
-  background: transparent url(../images/logo.png) no-repeat 0 18px;
-  border-bottom: 2px solid #C2CF52;
-  position: relative;
-  margin-bottom: 25px;
+    height: 125px;
+    background: transparent url(../images/logo.png) no-repeat 0 18px;
+    border-bottom: 2px solid $accentColor;
+    position: relative;
+    margin-bottom: 25px;
+
+    h1 {
+      text-indent: -9999px;
+      height: 44px;
+    } 
+
+    p {
+      font-weight: bold;
+      margin-top: 12px;
+      text-align: right;
+    }
+
+    form {
+      float: right;
+      margin-top: 45px;
+    }
+
+    input {
+      position: relative;
+      height: 16px;
+      width: 150px;
+      border: 2px solid $baseColor;
+      -moz-border-radius: 7px;
+      -webkit-border-radius: 7px;
+      -o-border-radius: 7px;
+      border-radius: 7px;
+      behavior: url(PIE.htc);
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      background: url(../images/search.png) no-repeat 5px 5px;
+      padding-left: 30px;
+      font: bold italic 1.2em Georgia, "Times New Roman", Times, serif;
+      color: #ddd;
+    }
+
+    input[type="submit"] {
+      height: 30px;
+      width: 40px;
+      font-weight: bold;
+    }
+
+    .account {
+      position: absolute;
+      top: 20px;
+      right: 145px;
+    }
+
+    .account a {
+      display: block;
+      font-size: .9em;
+      color: $baseColor;
+      padding-top: 0px;
+    }
+
+    .account a:hover { 
+      text-decoration: underline; 
+    }
+
+    .account a[href^="cart"] {
+      position: absolute;
+      right: -100px;
+      top: 0;
+      height: 50px;
+      width: 86px;
+      margin-top: 18px;
+    }
+
+    .account a[href^="cart"] img{
+        margin: -48px 25px 0 0;
+    }
+      
 }
-header h1 {
-  text-indent: -9999px;
-  height: 44px;
-}
+
 .branding #logo {
   display: block;
   position: relative;
@@ -91,102 +163,46 @@ header h1 {
   overflow: hidden;
 }
 
-header form {
-  float: right;
-  margin-top: 45px;
-}
-header input {
-  position: relative;
-  height: 16px;
-  width: 150px;
-  border: 2px solid #4E4F48;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -o-border-radius: 7px;
-  border-radius: 7px;
-  behavior: url(PIE.htc);
-}
-header input[type="text"] {
-  padding: 5px;
-  background: url(../images/search.png) no-repeat 5px 5px;
-  padding-left: 30px;
-  font: bold italic 1.2em Georgia, "Times New Roman", Times, serif;
-  color: #ddd;
-}
-header input[type="submit"] {
-  height: 30px;
-  width: 40px;
-  font-weight: bold;
-}
-
-header .account {
-  position: absolute;
-  top: 20px;
-  right: 145px;
-}
-header .account a {
-  display: block;
-  font-size: .9em;
-  color: #4E4F48;
-  padding-top: 0px;
-}
-header .account a:hover { text-decoration: underline; }
-header .account a[href^="cart"] {
-  position: absolute;
-  right: -100px;
-  top: 0;
-  height: 50px;
-  width: 86px;
-  margin-top: 18px;
-}
-header .account a[href^="cart"] img{
-  margin: -48px 25px 0 0;
-}
-header p {
-  font-weight: bold;
-  margin-top: 12px;
-}
 nav {
-  height: 30px;
-  margin: 45px 0 0;
-  line-height: 30px;
-  font-weight: bold;
-}
-nav ul li, footer ul li {
-  float: left;
-}
-nav ul li a {
-  position: relative;
-  width: 112px;
-  float: left;
-  background-color: #4E4F48;
-  margin-right: 5px;
-  text-align: center;
-  color: white;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -o-border-radius: 7px;
-  border-radius: 7px;
-  behavior: url(PIE.htc);
-  -moz-transition: background-color .3s ease-in;
-  -webkit-transition: background-color .3s ease-in;
-  -o-transition: background-color .3s ease-in;
-  transition: background-color .3s ease-in;
-}
-nav ul li a:hover {
-  background-color: #C2CF52;
+    height: 30px;
+    margin: 45px 0 0;
+    line-height: 30px;
+    font-weight: bold;
+
+  ul li, footer ul li {
+    float: left;
+  }
+
+  ul li a {
+    position: relative;
+    width: 112px;
+    float: left;
+    background-color: $baseColor;
+    margin-right: 5px;
+    text-align: center;
+    color: white;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    behavior: url(PIE.htc);
+    -moz-transition: background-color .3s ease-in;
+    -webkit-transition: background-color .3s ease-in;
+    -o-transition: background-color .3s ease-in;
+    transition: background-color .3s ease-in;
+  }
+  ul li a:hover {
+    background-color: $accentColor;
+  }
+
+  ul.account {
+    float: none;
+    margin-top: 0;
+    border: 1px solid #3FF;
+  }
 }
 
-nav ul.account {
-  float: none;
-  margin-top: 0;
-  border: 1px solid #3FF;
-}
-
-header p {
-  text-align: right;
-}
-#main { hidden: overflow; overflow: auto; }
+#main { overflow: hidden; overflow: auto; }
 #category #main { height: 468px; }
 #feature {  margin-bottom: 20px; float: left; position: relative; }
 #feature img { position: relative; }
@@ -198,7 +214,7 @@ header p {
   bottom: -35px;
   height: 35px;
   width: 185px;
-  background-color: #4E4F48;
+  background-color: $baseColor;
   background-color: rgba(78,79,72,.8);
   z-index: 100;
   font-weight: bold;
@@ -209,6 +225,7 @@ header p {
   -o-transition: all .3s ease-in;
   transition: all .3s ease-in;
 }
+
 .new a:hover span.overlay {
   opacity: 1;
   bottom: 0;
@@ -222,17 +239,22 @@ span.overlay img { padding-right: 6px; }
   font-size: 2em;
   float: left;
 }
+
 #newsletter {
   height: 70px;
   width: 70px;
   margin-top: 10px;
   padding: 10px 8px;
-  background-color: #4E4F48;
+  background-color: $baseColor;
   float: right;
   font-weight: bold;
   text-align: center;
+
+  a {   
+    color: $accentColor;
+  }
 }
-#newsletter a {   color: #C2CF52;  }
+
 footer {
   clear: both;
   font-size: .9em;
@@ -241,8 +263,11 @@ footer {
   height: 30px;
 }
 
-footer li { list-style: none;  }
-footer li a { padding: 0 .8em; border-right: 1px solid #4E4F48; color: #4E4F48; }
+footer li { 
+  list-style: none;
+}
+
+footer li a { padding: 0 .8em; border-right: 1px solid $baseColor; color: $baseColor; }
 a.last { border-right: none; }
 
 h2 { font-size: 2em; }
@@ -253,7 +278,7 @@ img { float: left; }
 /* Workout Navigation Overlay Menu */
 #type {
   display: none;
-  background-color: #4E4F48;
+  background-color: $baseColor;
   width: 580px;
   height: 260px;
   position: absolute;
@@ -302,8 +327,8 @@ img { float: left; }
   height: 43px;
   line-height: 43px;
   padding: 0 0 0 50px;
-  background: #4E4F48 url(../images/player.png) no-repeat;
-  border: 5px solid #4E4F48;
+  background: $baseColor url(../images/player.png) no-repeat;
+  border: 5px solid $baseColor;
   border-bottom: none;
   color: white;
   margin-right: 1px;
@@ -322,15 +347,15 @@ img { float: left; }
 #player_nav li.review a { background-position: 0 -215px; }
 
 #player_nav li a:hover {
-  background-color: #C2CF52;
-  border: 5px solid #C2CF52;
+  background-color: $accentColor;
+  border: 5px solid $accentColor;
   border-bottom: none;
 }
 #player_nav li a.active {
   background: #ffffff url(../images/player.png) no-repeat;
-  color: #4E4F48;
+  color: $baseColor;
   height: 43px;
-  border: 5px solid #4E4F48;
+  border: 5px solid $baseColor;
   border-bottom: none;
   cursor: default;
 }
@@ -348,7 +373,7 @@ img { float: left; }
 
 #player {
   width: 640px;
-  border: 5px solid #4E4F48;
+  border: 5px solid $baseColor;
   border-top: none;
   min-height: 400px;
   float: left;
@@ -378,7 +403,7 @@ img { float: left; }
   font-weight: bold;
 }
 .classify img { vertical-align: middle; padding: 5px; }
-.description {  }
+// .description {  }
 
 #details { line-height: 1.4em; }
 
@@ -404,7 +429,7 @@ p.reviewer { clear: both; font-size: .95em; margin: 15px 4px; }
   padding: 10px 15px 25px;
   width: 130px;
   height: 420px;
-  background-color: #4E4F48;
+  background-color: $baseColor;
   color: white;
   float: right;
   -moz-border-radius: 15px;
@@ -440,7 +465,7 @@ p.reviewer { clear: both; font-size: .95em; margin: 15px 4px; }
   display: block;
   float: left;
   line-height: 50px;
-  color:  #4E4F48;
+  color:  $baseColor;
   font-size: 1.3em;
   margin-left: 1em;
   -moz-transition: all .3s ease-in;
@@ -454,10 +479,10 @@ p.reviewer { clear: both; font-size: .95em; margin: 15px 4px; }
   -o-border-radius: 8px;
   border-radius: 8px;
   behavior: url(PIE.htc);
-  background-color: #C2CF52;
+  background-color: $accentColor;
 }
 
 /* Colors:
-Background: #4E4F48
-Highlight:  #C2CF52
+Background: $baseColor
+Highlight:  $accentColor
 */
